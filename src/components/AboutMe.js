@@ -1,9 +1,7 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 
 const AboutMeBlock = styled.div`
-  margin: 2rem;
-
   .title-content,
   .body-content {
     display: flex;
@@ -13,6 +11,7 @@ const AboutMeBlock = styled.div`
   }
 
   .title-content > span {
+    margin-top: 2rem;
     font-weight: lighter;
     font-size: 2.5rem;
     @media screen and (max-width: 768px) {
@@ -39,7 +38,7 @@ const AboutMeBlock = styled.div`
       font-size: 0.95rem;
     }
   }
-`
+`;
 
 const TextGroup = {
   title1: '우연에서 필연으로...',
@@ -63,10 +62,10 @@ const TextGroup = {
     '항상 새로운 지식을 갈망하고',
     '그 어떤 문제라도 포기하지 않고 해결할 자신이 있습니다.',
   ],
-}
+};
 
 const AboutMe = () => {
-  const { title1, body1, title2, body2 } = TextGroup
+  const { title1, body1, title2, body2 } = TextGroup;
   return (
     <AboutMeBlock>
       <div className="title-content">
@@ -90,7 +89,7 @@ const AboutMe = () => {
         ))}
       </div>
     </AboutMeBlock>
-  )
-}
+  );
+};
 
-export default AboutMe
+export default AboutMe;
