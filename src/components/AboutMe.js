@@ -2,9 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 
 const AboutMeBlock = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  @media screen and (max-width: 1270px) {
+    flex-direction: column;
+  }
   .title-content,
   .body-content {
     display: flex;
+    flex-direction: column;
     width: 100%;
     align-items: center;
     justify-content: center;
@@ -68,25 +75,29 @@ const AboutMe = () => {
   const { title1, body1, title2, body2 } = TextGroup;
   return (
     <AboutMeBlock>
-      <div className="title-content">
-        <span>{title1}</span>
+      <div className="content">
+        <div className="title-content">
+          <span>{title1}</span>
+        </div>
+        <div className="body-content">
+          {body1.map((text, index) => (
+            <span className={'body1_' + index} key={index}>
+              {text}
+            </span>
+          ))}
+        </div>
       </div>
-      <div className="body-content">
-        {body1.map((text, index) => (
-          <span className={'body1_' + index} key={index}>
-            {text}
-          </span>
-        ))}
-      </div>
-      <div className="title-content">
-        <span>{title2}</span>
-      </div>
-      <div className="body-content">
-        {body2.map((text, index) => (
-          <span className={'body2_' + index} key={index}>
-            {text}
-          </span>
-        ))}
+      <div className="content">
+        <div className="title-content">
+          <span>{title2}</span>
+        </div>
+        <div className="body-content">
+          {body2.map((text, index) => (
+            <span className={'body2_' + index} key={index}>
+              {text}
+            </span>
+          ))}
+        </div>
       </div>
     </AboutMeBlock>
   );

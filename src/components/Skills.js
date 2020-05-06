@@ -14,6 +14,7 @@ const SkillsBlock = styled.div`
   .title-block {
     margin: 2rem;
     margin-bottom: 0;
+    text-align: center;
   }
   .title {
     font-weight: lighter;
@@ -22,6 +23,10 @@ const SkillsBlock = styled.div`
   .skill-progress-block {
     margin: 2rem;
     margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
   .skill-progress {
     width: 75%;
@@ -65,7 +70,6 @@ const Skills = () => {
     0,
   );
   const [completed, setCompleted] = useState(completedSkills);
-  console.log(completed);
 
   useEffect(() => {
     setCompleted(ListSkills.map((skills) => skills.completed));
