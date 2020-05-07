@@ -3,13 +3,29 @@ import styled from 'styled-components';
 
 const FooterBlock = styled.div`
   display: flex;
+  background-color: rgba(0, 0, 0, 0.9);
   flex-direction: column;
   text-align: center;
+  padding: 3rem;
+  color: #fff;
+  span {
+    margin: 1rem 0;
+    font-family: 'Jost';
+    font-weight: 200;
+    font-size: 1.25rem;
+    @media screen and (max-width: 620px) {
+      font-size: 0.95rem;
+    }
+    & > a {
+      font-weight: 300;
+      color: #66d9e8;
+    }
+  }
 `;
 
 const Footer = () => {
   return (
-    <FooterBlock>
+    <FooterBlock className="footer">
       <span>
         #CodeTender94 PORTFOLIO, Be Made with{' '}
         <a

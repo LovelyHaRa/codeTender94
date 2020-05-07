@@ -6,23 +6,25 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 const ProjectBlock = styled.div`
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
   .title-block {
-    margin: 2rem 3.5rem;
-    margin-right: 0;
+    margin: 4rem;
     margin-bottom: 0;
     text-align: center;
     span {
-      font-weight: lighter;
+      font-weight: 200;
       font-size: 2rem;
+      font-family: 'Raleway';
+      & > span {
+        font-weight: 400;
+      }
     }
   }
   .content {
     display: flex;
     margin: 2rem;
     justify-content: center;
-    @media screen and (max-width: 1270px) {
-      flex-direction: column;
-    }
+    flex-direction: column;
   }
   .project-content {
     display: flex;
@@ -30,13 +32,23 @@ const ProjectBlock = styled.div`
     margin-bottom: 2rem;
     word-break: keep-all;
     font-weight: lighter;
+    padding: 1.5rem 0.5rem;
+    border-radius: 5px;
+    &:hover {
+      background: #fff5f5;
+    }
     .project-title {
       font-size: 1.5rem;
+      font-family: 'Jost';
+      font-weight: 400;
     }
     .project-summary,
     .project-link {
       margin-top: 0.5rem;
       font-size: 1.25rem;
+    }
+    .project-summary {
+      font-family: 'Nanum Gothic';
     }
     @media screen and (min-width: 1271px) {
       & > span {
@@ -44,13 +56,11 @@ const ProjectBlock = styled.div`
       }
       margin: 1.5rem;
       .project-title {
-        font-size: 1rem;
-        font-weight: normal;
+        font-size: 1.25rem;
       }
     }
     @media screen and (max-width: 570px) {
       .project-title {
-        font-weight: lighter;
         font-size: 1.25rem;
       }
       .project-summary,
@@ -102,9 +112,11 @@ const ProjectContent = ({ project }) => {
 
 const Project = () => {
   return (
-    <ProjectBlock>
+    <ProjectBlock className="project">
       <div className="title-block">
-        <span>MY PROJECT</span>
+        <span>
+          MY <span>PROJECT</span>
+        </span>
       </div>
       <div className="content">
         {ListProject.map((project, index) => (

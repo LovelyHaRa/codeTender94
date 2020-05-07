@@ -5,37 +5,61 @@ import { faBlog } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const ContactMeBlock = styled.div`
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: #f3f0ff;
   display: flex;
   flex-direction: column;
+  min-height: 80vh;
   .title-content {
-    margin: 2rem 3.5rem;
-    margin-right: 0;
+    margin: 4rem;
     margin-bottom: 0;
     text-align: center;
     span {
-      font-weight: lighter;
       font-size: 2rem;
+      font-family: 'Jost';
+      font-weight: 400;
+      & > span {
+        font-weight: 200;
+        font-family: 'Raleway';
+      }
     }
   }
   .subtitle {
     text-align: center;
-    margin: 2rem 0;
+    margin: 4rem 0;
+    span {
+      font-family: 'Nanum Gothic';
+      @media screen and (min-width: 769px) {
+        font-size: 1.25rem;
+      }
+    }
   }
   .content {
-    margin-top: 2rem;
+    margin-bottom: 3rem;
     display: flex;
     justify-content: center;
+    flex-direction: column;
   }
   .contact {
     display: flex;
     flex-direction: column;
     text-align: center;
-    margin: 0 1rem;
+    margin-bottom: 2rem;
   }
-  a {
-    color: inherit;
-    text-decoration: none !important;
+  .contact-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & > div {
+      width: 20rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  .contact-link {
+    font-size: 1.25rem;
+    font-family: 'Jost';
+    font-weight: 400;
   }
 `;
 
@@ -47,9 +71,11 @@ const ListContact = {
 const ContactMe = () => {
   const { mail, blog } = ListContact;
   return (
-    <ContactMeBlock>
+    <ContactMeBlock className="contactme">
       <div className="title-content">
-        <span>CONTACT ME</span>
+        <span>
+          CONTACT <span>ME</span>
+        </span>
       </div>
       <div className="subtitle">
         <span>
@@ -58,25 +84,36 @@ const ContactMe = () => {
       </div>
       <div className="content">
         <div className="contact contact-mail">
-          <a href={mail} target="_top">
-            <FontAwesomeIcon
-              icon={faEnvelope}
-              style={{ color: '#000' }}
-              size="4x"
-            />
-          </a>
-          <a href={mail} target="_top">
-            codetender94@gmail.com
-          </a>
+          <div className="contact-box">
+            <div>
+              <a href={mail} target="_top">
+                <FontAwesomeIcon
+                  icon={faEnvelope}
+                  style={{ color: 'rgba(0,0,0,0.5)' }}
+                  size="3x"
+                />
+              </a>
+              <a href={mail} target="_top">
+                <span className="contact-link">codetender94@gmail.com</span>
+              </a>
+            </div>
+          </div>
         </div>
-        <div className="contact contact-mail">
-          <a href={blog} rel="noopener  noreferrer" target="_blank">
-            <FontAwesomeIcon
-              icon={faBlog}
-              style={{ color: '#000' }}
-              size="4x"
-            />
-          </a>
+        <div className="contact contact-blog">
+          <div className="contact-box">
+            <div>
+              <a href={blog} rel="noopener  noreferrer" target="_blank">
+                <FontAwesomeIcon
+                  icon={faBlog}
+                  style={{ color: 'rgba(0,0,0,0.5)' }}
+                  size="3x"
+                />
+              </a>
+              <a href={blog} target="_top">
+                <span className="contact-link">TISTORY BLOG</span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </ContactMeBlock>

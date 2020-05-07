@@ -6,19 +6,37 @@ import { withStyles, lighten } from '@material-ui/core';
 const SkillsBlock = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: #e7f5ff;
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
   background-size: cover;
   .title-block {
-    margin: 2rem;
+    margin: 4rem;
     margin-bottom: 0;
     text-align: center;
   }
   .title {
-    font-weight: lighter;
+    font-weight: 300;
     font-size: 2rem;
+    font-family: 'Raleway';
+    & > span {
+      font-family: 'Jost';
+      font-weight: 500;
+    }
+  }
+  .subscript {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-family: 'Nanum Gothic';
+    font-weight: 400;
+    font-size: 1.25rem;
+    @media screen and (max-width: 768px) {
+      font-size: 1rem;
+    }
+    @media screen and (max-width: 580px) {
+      font-size: 0.8rem;
+    }
   }
   .skill-progress-block {
     margin: 2rem;
@@ -27,6 +45,11 @@ const SkillsBlock = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+  }
+  .progress-name {
+    font-family: 'Jost';
+    font-size: 1.25rem;
+    font-weight: 600;
   }
   .skill-progress {
     width: 75%;
@@ -42,6 +65,9 @@ const SkillsBlock = styled.div`
     margin-top: 1rem;
   }
 `;
+
+const subscript =
+  'C Programing부터 시작한 근본있는 경험으로 어떤 기술이든 때려 부수겠습니다.';
 
 const ListSkills = [
   { name: 'JAVASCRIPT', completed: 80 },
@@ -76,9 +102,14 @@ const Skills = () => {
   }, []);
 
   return (
-    <SkillsBlock>
+    <SkillsBlock className="skills">
       <div className="title-block">
-        <span className="title">DEVELOPMENT SKILLS</span>
+        <span className="title">
+          DEVELOPMENT <span>SKILLS</span>
+        </span>
+      </div>
+      <div className="subscript">
+        <span>{subscript}</span>
       </div>
       <div className="skill-progress-block">
         {ListSkills.map((skills, index) => (

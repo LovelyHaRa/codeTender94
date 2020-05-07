@@ -4,29 +4,37 @@ import styled from 'styled-components';
 const AboutMeBlock = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
+  min-height: 100vh;
+  align-items: center;
   @media screen and (max-width: 1270px) {
     flex-direction: column;
+    justify-content: center;
+  }
+  .content {
+    @media screen and (min-width: 1271px) {
+      margin: 3rem 0;
+    }
   }
   .title-content,
   .body-content {
     display: flex;
     flex-direction: column;
     width: 100%;
-    align-items: center;
-    justify-content: center;
+
+    @media screen and (max-width: 1270px) {
+      align-items: center;
+      justify-content: center;
+    }
   }
 
   .title-content > span {
     margin-top: 2rem;
-    font-weight: lighter;
-    font-size: 2.5rem;
+    font-weight: 400;
+    font-size: 2rem;
+    font-family: 'Nanum Gothic';
     @media screen and (max-width: 768px) {
-      font-size: 2rem;
-    }
-    @media screen and (max-width: 570px) {
-      font-size: 1.5rem;
-      font-weight: normal;
+      font-size: 1.75rem;
     }
   }
 
@@ -34,15 +42,14 @@ const AboutMeBlock = styled.div`
     flex-direction: column;
     margin-top: 2rem;
     margin-bottom: 2rem;
-    font-size: 1.25rem;
-    span + span {
-      margin-top: 1rem;
-    }
+    font-size: 1.5rem;
+    font-family: 'Noto Sans KR';
+    font-weight: 100;
     @media screen and (max-width: 768px) {
-      font-size: 1rem;
+      font-size: 1.25rem;
     }
     @media screen and (max-width: 570px) {
-      font-size: 0.95rem;
+      font-size: 1rem;
     }
   }
 `;
@@ -74,7 +81,7 @@ const TextGroup = {
 const AboutMe = () => {
   const { title1, body1, title2, body2 } = TextGroup;
   return (
-    <AboutMeBlock>
+    <AboutMeBlock className="aboutme">
       <div className="content">
         <div className="title-content">
           <span>{title1}</span>
