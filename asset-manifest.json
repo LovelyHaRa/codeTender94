@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/codetender94/static/css/main.c77cc93f.chunk.css",
-    "main.js": "/codetender94/static/js/main.b9203cf9.chunk.js",
-    "main.js.map": "/codetender94/static/js/main.b9203cf9.chunk.js.map",
-    "runtime-main.js": "/codetender94/static/js/runtime-main.c0accbda.js",
-    "runtime-main.js.map": "/codetender94/static/js/runtime-main.c0accbda.js.map",
-    "static/js/2.9a49f2e4.chunk.js": "/codetender94/static/js/2.9a49f2e4.chunk.js",
-    "static/js/2.9a49f2e4.chunk.js.map": "/codetender94/static/js/2.9a49f2e4.chunk.js.map",
-    "index.html": "/codetender94/index.html",
-    "precache-manifest.6187ea51f234be3272afb7f2c824bdb8.js": "/codetender94/precache-manifest.6187ea51f234be3272afb7f2c824bdb8.js",
-    "service-worker.js": "/codetender94/service-worker.js",
-    "static/css/main.c77cc93f.chunk.css.map": "/codetender94/static/css/main.c77cc93f.chunk.css.map",
-    "static/js/2.9a49f2e4.chunk.js.LICENSE.txt": "/codetender94/static/js/2.9a49f2e4.chunk.js.LICENSE.txt",
-    "static/media/App.css": "/codetender94/static/media/Raleway-ThinItalic.b4fdd9b1.ttf"
+    "main.css": "/codeTender94/static/css/main.1ea6b028.chunk.css",
+    "main.js": "/codeTender94/static/js/main.f7e6b9b3.chunk.js",
+    "main.js.map": "/codeTender94/static/js/main.f7e6b9b3.chunk.js.map",
+    "runtime-main.js": "/codeTender94/static/js/runtime-main.e6b5b792.js",
+    "runtime-main.js.map": "/codeTender94/static/js/runtime-main.e6b5b792.js.map",
+    "static/js/2.c9767c29.chunk.js": "/codeTender94/static/js/2.c9767c29.chunk.js",
+    "static/js/2.c9767c29.chunk.js.map": "/codeTender94/static/js/2.c9767c29.chunk.js.map",
+    "index.html": "/codeTender94/index.html",
+    "precache-manifest.3d16ef9275ff86a4ed6a4ab985cb0959.js": "/codeTender94/precache-manifest.3d16ef9275ff86a4ed6a4ab985cb0959.js",
+    "service-worker.js": "/codeTender94/service-worker.js",
+    "static/css/main.1ea6b028.chunk.css.map": "/codeTender94/static/css/main.1ea6b028.chunk.css.map",
+    "static/js/2.c9767c29.chunk.js.LICENSE.txt": "/codeTender94/static/js/2.c9767c29.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/codeTender94/static/media/Raleway-ThinItalic.b4fdd9b1.ttf"
   },
   "entrypoints": [
-    "static/js/runtime-main.c0accbda.js",
-    "static/js/2.9a49f2e4.chunk.js",
-    "static/css/main.c77cc93f.chunk.css",
-    "static/js/main.b9203cf9.chunk.js"
+    "static/js/runtime-main.e6b5b792.js",
+    "static/js/2.c9767c29.chunk.js",
+    "static/css/main.1ea6b028.chunk.css",
+    "static/js/main.f7e6b9b3.chunk.js"
   ]
 }
