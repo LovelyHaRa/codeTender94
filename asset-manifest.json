@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/codetender94/static/css/main.c77cc93f.chunk.css",
+    "main.js": "/codetender94/static/js/main.b9203cf9.chunk.js",
+    "main.js.map": "/codetender94/static/js/main.b9203cf9.chunk.js.map",
+    "runtime-main.js": "/codetender94/static/js/runtime-main.c0accbda.js",
+    "runtime-main.js.map": "/codetender94/static/js/runtime-main.c0accbda.js.map",
+    "static/js/2.9a49f2e4.chunk.js": "/codetender94/static/js/2.9a49f2e4.chunk.js",
+    "static/js/2.9a49f2e4.chunk.js.map": "/codetender94/static/js/2.9a49f2e4.chunk.js.map",
+    "index.html": "/codetender94/index.html",
+    "precache-manifest.6187ea51f234be3272afb7f2c824bdb8.js": "/codetender94/precache-manifest.6187ea51f234be3272afb7f2c824bdb8.js",
+    "service-worker.js": "/codetender94/service-worker.js",
+    "static/css/main.c77cc93f.chunk.css.map": "/codetender94/static/css/main.c77cc93f.chunk.css.map",
+    "static/js/2.9a49f2e4.chunk.js.LICENSE.txt": "/codetender94/static/js/2.9a49f2e4.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/codetender94/static/media/Raleway-ThinItalic.b4fdd9b1.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c0accbda.js",
+    "static/js/2.9a49f2e4.chunk.js",
+    "static/css/main.c77cc93f.chunk.css",
+    "static/js/main.b9203cf9.chunk.js"
+  ]
+}
