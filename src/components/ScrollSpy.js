@@ -22,6 +22,8 @@ const ScrollSpyBlock = styled.nav`
     border: none;
     background: transparent;
     padding: 5px 0;
+    font-family: 'Raleway';
+    font-weight: 400;
   }
   .menu li .context::before,
   .menu li .context::after {
@@ -61,7 +63,7 @@ const ScrollSpyBlock = styled.nav`
     opacity: 0;
     letter-spacing: 0.5px;
     background-color: #f03e3e;
-    padding: 10px 20px;
+    padding: 0.5rem 1rem;
     border-radius: 3px;
     margin-right: 30px;
     transform: translateX(20px);

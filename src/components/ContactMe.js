@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { faBlog } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useSpring, animated } from 'react-spring';
 
 const ContactMeBlock = styled.div`
   background-color: #f3f0ff;
   display: flex;
   flex-direction: column;
-  min-height: 80vh;
+  min-height: 85vh;
   .title-content {
     margin: 4rem;
     margin-bottom: 0;
@@ -68,21 +69,49 @@ const ListContact = {
   blog: 'https://stylein.tistory.com/',
 };
 
-const ContactMe = () => {
+const ContactMe = ({ scrollTop }) => {
   const { mail, blog } = ListContact;
+  const [titleAnimated, setTitleAnimated] = useSpring(() => ({ opacity: 0 }));
+  const [subAnimated, setSubAnimated] = useSpring(() => ({ opacity: 0 }));
+  const [contentAnimated, setContentAnimated] = useSpring(() => ({
+    opacity: 0,
+  }));
+
+  useEffect(() => {
+    const offSetGroup = [
+      document.querySelector('.project').offsetTop,
+      document.querySelector('.contactme').offsetTop,
+      document.querySelector('.footer').offsetTop,
+    ];
+    const currentOffSet =
+      offSetGroup[1] - (offSetGroup[1] - offSetGroup[0]) / 2;
+    const nextOffSet = offSetGroup[2] + 100;
+    const isVisible = [
+      scrollTop >= currentOffSet - 300 && scrollTop < nextOffSet ? true : false,
+      scrollTop >= currentOffSet - 100 && scrollTop < nextOffSet ? true : false,
+      scrollTop >= currentOffSet && scrollTop < nextOffSet ? true : false,
+    ];
+    const animatedConfig = { mass: 50, tension: 1000, friction: 300 };
+    setTitleAnimated({ opacity: isVisible[0] ? 1 : 0, config: animatedConfig });
+    setSubAnimated({ opacity: isVisible[1] ? 1 : 0, config: animatedConfig });
+    setContentAnimated({
+      opacity: isVisible[2] ? 1 : 0,
+      config: animatedConfig,
+    });
+  });
   return (
     <ContactMeBlock className="contactme">
-      <div className="title-content">
+      <animated.div style={titleAnimated} className="title-content">
         <span>
           CONTACT <span>ME</span>
         </span>
-      </div>
-      <div className="subtitle">
+      </animated.div>
+      <animated.div style={subAnimated} className="subtitle">
         <span>
           제가 필요하다고 느끼신다면 언제든지 연락해 주시면 감사하겠습니다!
         </span>
-      </div>
-      <div className="content">
+      </animated.div>
+      <animated.div style={contentAnimated} className="content">
         <div className="contact contact-mail">
           <div className="contact-box">
             <div>
@@ -115,7 +144,7 @@ const ContactMe = () => {
             </div>
           </div>
         </div>
-      </div>
+      </animated.div>
     </ContactMeBlock>
   );
 };

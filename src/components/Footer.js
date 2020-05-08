@@ -6,13 +6,13 @@ const FooterBlock = styled.div`
   background-color: rgba(0, 0, 0, 0.9);
   flex-direction: column;
   text-align: center;
-  padding: 3rem;
+  padding: 2rem;
   color: #fff;
   span {
-    margin: 1rem 0;
+    margin: 0.25rem;
     font-family: 'Jost';
     font-weight: 200;
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     @media screen and (max-width: 620px) {
       font-size: 0.95rem;
     }

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import { withStyles, lighten } from '@material-ui/core';
+import { useSpring, animated } from 'react-spring';
 
 const SkillsBlock = styled.div`
   display: flex;
@@ -11,6 +12,7 @@ const SkillsBlock = styled.div`
   background-attachment: scroll;
   background-position: center center;
   background-size: cover;
+  min-height: 100vh;
   .title-block {
     margin: 4rem;
     margin-bottom: 0;
@@ -53,7 +55,7 @@ const SkillsBlock = styled.div`
   }
   .skill-progress {
     width: 75%;
-    margin: 2rem 0;
+    margin: 1rem 0;
     @media screen and (max-width: 768px) {
       width: 85%;
     }
@@ -90,37 +92,86 @@ const CustomLinearProgress = withStyles({
   },
 })(LinearProgress);
 
-const Skills = () => {
+const Skills = ({ scrollTop }) => {
   const completedSkills = Array.apply(null, new Array(ListSkills.length)).map(
     Number.prototype.valueOf,
     0,
   );
   const [completed, setCompleted] = useState(completedSkills);
+  const fromAnimate = {
+    opacity: 0,
+    x: 20,
+    height: 0,
+  };
+  const [titleAnimated, setTitleAnimated] = useSpring(() => fromAnimate);
+  const [subAnimated, setSubAnimated] = useSpring(() => fromAnimate);
+  const [skillAnimated, setSkillAnimated] = useSpring(() => ({
+    opacity: 0,
+  }));
 
   useEffect(() => {
-    setCompleted(ListSkills.map((skills) => skills.completed));
-  }, []);
+    const offSetGroup = [
+      document.querySelector('.aboutme').offsetTop,
+      document.querySelector('.skills').offsetTop,
+      document.querySelector('.project').offsetTop,
+      document.querySelector('.contactme').offsetTop,
+    ];
+    const currentOffSet =
+      offSetGroup[1] - (offSetGroup[1] - offSetGroup[0]) / 2;
+    const nextOffSet = offSetGroup[2] + (offSetGroup[3] - offSetGroup[2]) / 2;
+    const isVisible = [
+      scrollTop >= currentOffSet - 300 && scrollTop < nextOffSet ? true : false,
+      scrollTop >= currentOffSet - 200 && scrollTop < nextOffSet ? true : false,
+      scrollTop >= currentOffSet && scrollTop < nextOffSet ? true : false,
+    ];
+    const animatedConfig = { mass: 50, tension: 1000, friction: 300 };
+    setTitleAnimated({
+      opacity: isVisible[0] ? 1 : 0,
+      x: isVisible[0] ? 0 : 20,
+      height: isVisible[0] ? 60 : 0,
+      config: animatedConfig,
+    });
+    setSubAnimated({
+      opacity: isVisible[1] ? 1 : 0,
+      x: isVisible[1] ? 0 : 20,
+      height: isVisible[1] ? 60 : 0,
+      config: animatedConfig,
+    });
+    setSkillAnimated({
+      opacity: isVisible[2] ? 1 : 0,
+      config: animatedConfig,
+    });
+    if (isVisible[2]) {
+      setCompleted(ListSkills.map((skills) => skills.completed));
+    } else {
+      setCompleted(ListSkills.map(() => 0));
+    }
+  }, [scrollTop, setTitleAnimated, setSubAnimated, setSkillAnimated]);
 
   return (
     <SkillsBlock className="skills">
-      <div className="title-block">
+      <animated.div style={titleAnimated} className="title-block">
         <span className="title">
           DEVELOPMENT <span>SKILLS</span>
         </span>
-      </div>
-      <div className="subscript">
+      </animated.div>
+      <animated.div style={subAnimated} className="subscript">
         <span>{subscript}</span>
-      </div>
+      </animated.div>
       <div className="skill-progress-block">
         {ListSkills.map((skills, index) => (
-          <div className="skill-progress" key={index}>
+          <animated.div
+            style={skillAnimated}
+            className="skill-progress"
+            key={index}
+          >
             <span className="progress-name">{skills.name}</span>
             <CustomLinearProgress
               className="progress-bar"
               variant="determinate"
               value={completed[index]}
             />
-          </div>
+          </animated.div>
         ))}
       </div>
     </SkillsBlock>

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
+import { useSpring, animated } from 'react-spring';
 
 const AboutMeBlock = styled.div`
   display: flex;
@@ -60,7 +61,8 @@ const TextGroup = {
     '지금으로부터 10년 전 호기심에서 시작한 프로그래밍은',
     '어느덧 꿈을 이루기 위한 목표가 되었습니다.',
     '프로그래밍으로 무언가를 창조하는 것이 정말 즐거워서',
-    '어떤 분야의 개발을 해보고 싶은지 많은 고민을 했습니다.',
+    '어떤 분야의 개발자가 되고 싶은지 많은 고민을 했습니다.',
+    '그러던 와중 하이브리드 앱 개발을 하게 되면서',
     '문득 든 생각에 웹 풀스택 개발자가 되면',
     '하고싶은 건 다 할 수 있겠다고 생각했습니다.',
     '그래서 웹 개발자가 되기 위해 오늘도 수련하고 있습니다.',
@@ -78,11 +80,36 @@ const TextGroup = {
   ],
 };
 
-const AboutMe = () => {
+const AboutMe = ({ scrollTop }) => {
   const { title1, body1, title2, body2 } = TextGroup;
+  const [first, setFirst] = useSpring(() => ({
+    opacity: 0,
+  }));
+  const [second, setSecond] = useSpring(() => ({
+    opacity: 0,
+  }));
+  useEffect(() => {
+    const offSetGroup = [
+      document.querySelector('.aboutme').offsetTop,
+      document.querySelector('.skills').offsetTop,
+      document.querySelector('.project').offsetTop,
+    ];
+    const nextOffSet = offSetGroup[2] - (offSetGroup[2] - offSetGroup[1]);
+    const isFirstVisible =
+      scrollTop >= offSetGroup[0] / 2 - 200 && scrollTop < nextOffSet
+        ? true
+        : false;
+    const isSecondVisible =
+      scrollTop >= offSetGroup[0] - 200 && scrollTop < nextOffSet
+        ? true
+        : false;
+    setFirst({ config: { mass: 20 }, opacity: isFirstVisible ? 1 : 0 });
+    setSecond({ config: { mass: 20 }, opacity: isSecondVisible ? 1 : 0 });
+  }, [scrollTop, setFirst, setSecond]);
+
   return (
     <AboutMeBlock className="aboutme">
-      <div className="content">
+      <animated.div style={first} className="content">
         <div className="title-content">
           <span>{title1}</span>
         </div>
@@ -93,8 +120,8 @@ const AboutMe = () => {
             </span>
           ))}
         </div>
-      </div>
-      <div className="content">
+      </animated.div>
+      <animated.div style={second} className="content">
         <div className="title-content">
           <span>{title2}</span>
         </div>
@@ -105,7 +132,7 @@ const AboutMe = () => {
             </span>
           ))}
         </div>
-      </div>
+      </animated.div>
     </AboutMeBlock>
   );
 };
