@@ -124,7 +124,7 @@ const Skills = ({ scrollTop }) => {
       scrollTop >= currentOffSet - 200 && scrollTop < nextOffSet ? true : false,
       scrollTop >= currentOffSet && scrollTop < nextOffSet ? true : false,
     ];
-    const animatedConfig = { mass: 50, tension: 1000, friction: 300 };
+    const animatedConfig = { mass: 50, tension: 1000, friction: 500 };
     setTitleAnimated({
       opacity: isVisible[0] ? 1 : 0,
       x: isVisible[0] ? 0 : 20,

@@ -108,7 +108,7 @@ const ContactMe = ({ scrollTop }) => {
       </animated.div>
       <animated.div style={subAnimated} className="subtitle">
         <span>
-          제가 필요하다고 느끼신다면 언제든지 연락해 주시면 감사하겠습니다!
+          항상 준비되어 있습니다!
         </span>
       </animated.div>
       <animated.div style={contentAnimated} className="content">

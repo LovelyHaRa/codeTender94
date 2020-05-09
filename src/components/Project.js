@@ -1,8 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { useSpring, animated } from 'react-spring';
+import Modal from '@material-ui/core/Modal';
+import Backdrop from '@material-ui/core/Backdrop';
+import Fade from '@material-ui/core/Fade';
+import { makeStyles } from '@material-ui/core';
+import GridList from '@material-ui/core/GridList';
+import GridListTile from '@material-ui/core/GridListTile';
 
 const ProjectBlock = styled.div`
   display: flex;
@@ -35,6 +41,7 @@ const ProjectBlock = styled.div`
     font-weight: lighter;
     padding: 1.5rem 0.5rem;
     border-radius: 5px;
+    cursor: pointer;
     &:hover {
       background: #fff5f5;
     }
@@ -81,6 +88,11 @@ const ProjectBlock = styled.div`
       }
     }
   }
+  .project-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 const ListProject = [
@@ -88,28 +100,58 @@ const ListProject = [
     name: 'CODE WIKI',
     summary:
       '물품의 바코드를 스캔하면 해당 물품에 대한 정보를 위키백과 형식으로 공유하는 웹 서비스',
-    skills: 'Java(Android) / JSP / JQUERY',
+    skills: 'Java(Android) / JSP / JQUERY / MySQL',
     link: 'https://github.com/LovelyHaRa/2019_Capstone_Design_Project',
+    feature: [
+      'Bar/QR코드 스캔(Android APP)',
+      '코드값을 기반으로 위키 문서 조회/관리',
+      '사용자 인증',
+      '게시판',
+    ],
+    img: [
+      process.env.PUBLIC_URL + '/images/project/codewiki/01.jpg',
+      process.env.PUBLIC_URL + '/images/project/codewiki/02.jpg',
+      process.env.PUBLIC_URL + '/images/project/codewiki/03.jpg',
+    ],
   },
   {
     name: 'Spirng Framework - CODE WIKI',
     summary: 'CODE WIKI 프로젝트를 Spring Framework를 이용하여 Re-Engineering',
-    skills: 'Spring Boot / Spring Security / JPA',
+    skills: 'Spring Boot / Spring Security / JPA / MySQL',
     link: 'https://github.com/LovelyHaRa/springframework-CODE_WIKI',
+    feature: [
+      '코드값을 기반으로 위키 문서 조회/관리',
+      'Spring Security 기반 사용자 인증',
+      '게시판',
+      '관리자 페이지(대시보드, DB관리)',
+    ],
+    img: [
+      process.env.PUBLIC_URL + '/images/project/spring-codewiki/01.jpg',
+      process.env.PUBLIC_URL + '/images/project/spring-codewiki/02.jpg',
+      process.env.PUBLIC_URL + '/images/project/spring-codewiki/03.jpg',
+    ],
   },
   {
     name: 'React Single Page Application - MAKE UP HARA',
     summary:
       '블로그, 위키서비스를 제공하는 React 기반 SPA(현재 추가 기능 구현 진행 중)',
-    skills: 'React / Redux / Node.js / Koa.js',
+    skills: 'React / Redux / Node.js / Koa.js / MongoDB',
     link: 'https://github.com/LovelyHaRa/Make-Up-HaRa',
+    feature: [
+      '다크모드 지원',
+      '로컬 / 소셜(Google, Naver, Kakao) 로그인',
+      '블로그: 포스트 조회 / 작성 / 수정 / 삭제',
+      '블로그: 작성자 / 태그별 조회 기능',
+      '위키: 문서 작성 / 수정',
+      '위키: 문서 검색 / 검색결과 정렬',
+    ],
   },
 ];
 
-const ProjectContent = ({ project }) => {
+const ProjectContent = ({ project, onClick, index }) => {
   const { name, summary, skills, link } = project;
   return (
-    <div className="project-content">
+    <div onClick={() => onClick(index)} className="project-content">
       <span className="project-title">{name}</span>
       <span className="project-summary">{summary}</span>
       <span className="project-skills">{skills}</span>
@@ -123,6 +165,98 @@ const ProjectContent = ({ project }) => {
         </a>
       </span>
     </div>
+  );
+};
+
+const useStyles = makeStyles((theme) => ({
+  modal: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  paper: {
+    display: 'flex',
+    flexDirection: 'column',
+    backgroundColor: theme.palette.background.paper,
+    border: '2px solid #000',
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3),
+  },
+  title: {
+    fontFamily: 'Raleway',
+    fontSize: '1rem',
+    margin: '1rem 0',
+  },
+  summary: {
+    fontFamily: 'Nanum Gothic',
+    marginBottom: '1rem',
+    wordBreak: 'keep-all',
+  },
+  skills: {
+    fontFamily: 'Raleway',
+    fontSize: '1rem',
+    marginBottom: '1rem',
+    color: '#22b8cf',
+  },
+  featureTitle: {
+    fontFamily: 'Nanum Gothic',
+    marginTop: '1rem',
+  },
+  featureList: {
+    fontFamily: 'Nanum Gothic',
+    margin: '0.5rem',
+  },
+  gridListRoot: {
+    display: 'flex',
+    justifyContent: 'center',
+  },
+  gridList: {
+    width: 460,
+    height: 360,
+  },
+}));
+
+const ProjectModal = ({ project, open, onClose }) => {
+  const classes = useStyles();
+  const { name, summary, skills, feature, img } = project;
+  return (
+    <Modal
+      open={open}
+      onClose={onClose}
+      className={classes.modal}
+      closeAfterTransition
+      BackdropComponent={Backdrop}
+      BackdropProps={{ timeout: 500 }}
+    >
+      <Fade in={open}>
+        <div className={classes.paper}>
+          <span className={classes.title}>{name}</span>
+          <span className={classes.summary}>{summary}</span>
+          <span className={classes.skills}>{skills}</span>
+          <div>
+            <span className={classes.featureTitle}>구현 기능</span>
+            <ul>
+              {feature.map((element, index) => (
+                <li className={classes.featureList} key={index}>
+                  {element}
+                </li>
+              ))}
+            </ul>
+          </div>
+          {img && (
+            <div className={classes.gridListRoot}>
+              <GridList className={classes.gridList} cellHeight={320} cols={3}>
+                {img.map((element, index) => (
+                  <GridListTile key={index} cols={1}>
+                    <img src={element} alt={name} />
+                  </GridListTile>
+                ))}
+              </GridList>
+            </div>
+          )}
+        </div>
+      </Fade>
+    </Modal>
   );
 };
 
@@ -153,6 +287,22 @@ const Project = ({ scrollTop }) => {
       config: animatedConfig,
     });
   });
+
+  const openArray = Array.apply(null, new Array(ListProject.length)).map(
+    Boolean.prototype.valueOf,
+    false,
+  );
+  const [open, setOpen] = useState(openArray);
+  const handleOpen = (target) => {
+    setOpen(
+      openArray.map((element, index) => (index === target ? true : false)),
+    );
+  };
+
+  const handleClose = () => {
+    setOpen(openArray.map(() => false));
+  };
+
   return (
     <ProjectBlock className="project">
       <animated.div style={titleAnimated} className="title-block">
@@ -162,7 +312,18 @@ const Project = ({ scrollTop }) => {
       </animated.div>
       <animated.div style={contentAnimated} className="content">
         {ListProject.map((project, index) => (
-          <ProjectContent project={project} key={index} />
+          <div key={index}>
+            <ProjectContent
+              onClick={handleOpen}
+              index={index}
+              project={project}
+            />
+            <ProjectModal
+              project={project}
+              open={open[index]}
+              onClose={handleClose}
+            />
+          </div>
         ))}
       </animated.div>
     </ProjectBlock>
