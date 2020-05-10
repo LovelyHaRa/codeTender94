@@ -145,6 +145,7 @@ const ListProject = [
       '위키: 문서 작성 / 수정',
       '위키: 문서 검색 / 검색결과 정렬',
     ],
+    applink: 'https://makeuphara.herokuapp.com/',
   },
 ];
 
@@ -214,11 +215,17 @@ const useStyles = makeStyles((theme) => ({
     width: 460,
     height: 360,
   },
+  applink: {
+    margin: '1rem 0',
+    color: '#22b8cf',
+    fontFamily: 'Nanum Gothic',
+    fontSize: '1rem',
+  },
 }));
 
 const ProjectModal = ({ project, open, onClose }) => {
   const classes = useStyles();
-  const { name, summary, skills, feature, img } = project;
+  const { name, summary, skills, feature, img, applink } = project;
   return (
     <Modal
       open={open}
@@ -243,6 +250,16 @@ const ProjectModal = ({ project, open, onClose }) => {
               ))}
             </ul>
           </div>
+          {applink && (
+            <a
+              className={classes.applink}
+              href={applink}
+              rel="noopener  noreferrer"
+              target="_blank"
+            >
+              바로가기
+            </a>
+          )}
           {img && (
             <div className={classes.gridListRoot}>
               <GridList className={classes.gridList} cellHeight={320} cols={3}>
