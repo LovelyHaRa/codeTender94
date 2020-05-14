@@ -27,7 +27,7 @@ const SkillsBlock = styled.div`
       font-weight: 500;
     }
   }
-  .subscript {
+  .explanation {
     text-align: center;
     margin-top: 1.5rem;
     font-family: 'Nanum Gothic';
@@ -54,6 +54,8 @@ const SkillsBlock = styled.div`
     font-weight: 600;
   }
   .skill-progress {
+    display: flex;
+    flex-direction: column;
     width: 75%;
     margin: 1rem 0;
     @media screen and (max-width: 768px) {
@@ -63,22 +65,53 @@ const SkillsBlock = styled.div`
       width: 95%;
     }
   }
+  .progress-content {
+    margin-top: 0.25rem;
+    font-family: 'Nanum Gothic';
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #868e96;
+  }
   .progress-bar {
     margin-top: 1rem;
   }
 `;
 
-const subscript =
+const explanation =
   'C Programing부터 시작한 근본있는 경험으로 어떤 기술이든 때려 부수겠습니다.';
 
 const ListSkills = [
-  { name: 'JAVASCRIPT', completed: 80 },
-  { name: 'REACT', completed: 70 },
-  { name: 'SPRING FRAMEWORK', completed: 70 },
-  { name: 'NODE.JS', completed: 50 },
-  { name: 'JAVA', completed: 80 },
-  { name: 'C++', completed: 80 },
-  { name: 'C#', completed: 40 },
+  {
+    name: 'JAVASCRIPT',
+    content: 'ES6 문법 사용, VanillaJS',
+    completed: 80,
+  },
+  { name: 'REACT', content: 'CRUD 기능이 포함된 SPA 제작 경험', completed: 70 },
+  {
+    name: 'SPRING FRAMEWORK',
+    content: 'CRUD 기능이 포함된 MVC 프로젝트 제작 경험',
+    completed: 70,
+  },
+  {
+    name: 'NODE.JS',
+    content: 'Express/Koa를 기반으로 한 웹 서버 구축 경험, API 설계',
+    completed: 50,
+  },
+  {
+    name: 'JAVA',
+    content: 'GUI 프로그래밍 가능, Android App 개발 경험',
+    completed: 80,
+  },
+  {
+    name: 'C++',
+    content: '알고리즘 문제 해결을 위한 언어로 사용 중',
+    completed: 80,
+  },
+  {
+    name: 'C#',
+    content: '.NET CORE 실습 경험, WINDOWS 응용프로그램 제작 경험',
+    completed: 40,
+  },
 ];
 
 const CustomLinearProgress = withStyles({
@@ -155,8 +188,8 @@ const Skills = ({ scrollTop }) => {
           DEVELOPMENT <span>SKILLS</span>
         </span>
       </animated.div>
-      <animated.div style={subAnimated} className="subscript">
-        <span>{subscript}</span>
+      <animated.div style={subAnimated} className="explanation">
+        <span>{explanation}</span>
       </animated.div>
       <div className="skill-progress-block">
         {ListSkills.map((skills, index) => (
@@ -166,6 +199,9 @@ const Skills = ({ scrollTop }) => {
             key={index}
           >
             <span className="progress-name">{skills.name}</span>
+            {skills.content && (
+              <span className="progress-content">{skills.content}</span>
+            )}
             <CustomLinearProgress
               className="progress-bar"
               variant="determinate"

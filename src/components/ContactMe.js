@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
-import { faBlog } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useSpring, animated } from 'react-spring';
 
@@ -107,9 +106,7 @@ const ContactMe = ({ scrollTop }) => {
         </span>
       </animated.div>
       <animated.div style={subAnimated} className="subtitle">
-        <span>
-          항상 준비되어 있습니다!
-        </span>
+        <span>항상 준비되어 있습니다!</span>
       </animated.div>
       <animated.div style={contentAnimated} className="content">
         <div className="contact contact-mail">
@@ -131,16 +128,11 @@ const ContactMe = ({ scrollTop }) => {
         <div className="contact contact-blog">
           <div className="contact-box">
             <div>
-              <a href={blog} rel="noopener  noreferrer" target="_blank">
-                <FontAwesomeIcon
-                  icon={faBlog}
-                  style={{ color: 'rgba(0,0,0,0.5)' }}
-                  size="3x"
-                />
-              </a>
+              <div />
               <a href={blog} target="_top">
                 <span className="contact-link">TISTORY BLOG</span>
               </a>
+              <div />
             </div>
           </div>
         </div>
