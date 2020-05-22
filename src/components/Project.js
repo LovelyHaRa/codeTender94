@@ -93,6 +93,11 @@ const ProjectBlock = styled.div`
     align-items: center;
     justify-content: center;
   }
+  @media screen and (max-width: 680px) {
+    .modal {
+      width: 95%;
+    }
+  }
 `;
 
 const ListProject = [
@@ -133,8 +138,7 @@ const ListProject = [
   },
   {
     name: 'React Single Page Application - MAKE UP HARA',
-    summary:
-      '블로그, 위키서비스를 제공하는 React 기반 SPA(현재 추가 기능 구현 진행 중)',
+    summary: '블로그, 위키서비스를 제공하는 React 기반 SPA',
     skills: 'React / Redux / Node.js / Koa.js / MongoDB',
     link: 'https://github.com/LovelyHaRa/Make-Up-HaRa',
     feature: [
@@ -144,7 +148,7 @@ const ListProject = [
       '블로그: 작성자 / 태그별 조회 기능',
       '위키: 문서 작성 / 수정',
       '위키: 문서 검색 / 검색결과 정렬',
-      '마이페이지: 이름 / 비밀번호 변경, 활동 기록 조회',
+      '마이페이지: 유저 정보 수정, 활동 기록 조회',
     ],
     applink: 'https://makeuphara.herokuapp.com/',
   },
@@ -175,6 +179,9 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    '@media (max-width: 780px)': {
+      width: '100%',
+    },
   },
   paper: {
     display: 'flex',
@@ -183,6 +190,9 @@ const useStyles = makeStyles((theme) => ({
     border: '2px solid #000',
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
+    '@media (max-width: 780px)': {
+      width: '70%',
+    },
   },
   title: {
     fontFamily: 'Raleway',
@@ -205,8 +215,13 @@ const useStyles = makeStyles((theme) => ({
     marginTop: '1rem',
   },
   featureList: {
+    listStyleType: 'square',
+    paddingLeft: '0.75rem',
+  },
+  featureItem: {
     fontFamily: 'Nanum Gothic',
     margin: '0.5rem',
+    paddingLeft: '0.25rem',
   },
   gridListRoot: {
     display: 'flex',
@@ -243,9 +258,9 @@ const ProjectModal = ({ project, open, onClose }) => {
           <span className={classes.skills}>{skills}</span>
           <div>
             <span className={classes.featureTitle}>구현 기능</span>
-            <ul>
+            <ul className={classes.featureList}>
               {feature.map((element, index) => (
-                <li className={classes.featureList} key={index}>
+                <li className={classes.featureItem} key={index}>
                   {element}
                 </li>
               ))}
