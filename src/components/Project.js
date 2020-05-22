@@ -144,6 +144,7 @@ const ListProject = [
       '블로그: 작성자 / 태그별 조회 기능',
       '위키: 문서 작성 / 수정',
       '위키: 문서 검색 / 검색결과 정렬',
+      '마이페이지: 이름 / 비밀번호 변경, 활동 기록 조회',
     ],
     applink: 'https://makeuphara.herokuapp.com/',
   },
