@@ -5,7 +5,9 @@ const MainBlock = styled.header`
   display: flex;
   align-items: center;
   color: #000;
-  background-color: rgba(0, 0, 0, 0.9);
+  background: #e55d87;
+  background: -webkit-linear-gradient(to right, #e55d87, #5fc3e4);
+  background: linear-gradient(to right, #e55d87, #5fc3e4);
   height: 100vh;
   background-repeat: no-repeat;
   background-attachment: scroll;
