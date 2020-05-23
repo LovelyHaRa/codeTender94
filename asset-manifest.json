@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/codeTender94/static/css/main.1ea6b028.chunk.css",
-    "main.js": "/codeTender94/static/js/main.48f50cf9.chunk.js",
-    "main.js.map": "/codeTender94/static/js/main.48f50cf9.chunk.js.map",
+    "main.js": "/codeTender94/static/js/main.77d2a2e5.chunk.js",
+    "main.js.map": "/codeTender94/static/js/main.77d2a2e5.chunk.js.map",
     "runtime-main.js": "/codeTender94/static/js/runtime-main.e6b5b792.js",
     "runtime-main.js.map": "/codeTender94/static/js/runtime-main.e6b5b792.js.map",
     "static/js/2.7c4d0912.chunk.js": "/codeTender94/static/js/2.7c4d0912.chunk.js",
     "static/js/2.7c4d0912.chunk.js.map": "/codeTender94/static/js/2.7c4d0912.chunk.js.map",
     "index.html": "/codeTender94/index.html",
-    "precache-manifest.a4c6845ddbe7c6a6f718be79cd4cda29.js": "/codeTender94/precache-manifest.a4c6845ddbe7c6a6f718be79cd4cda29.js",
+    "precache-manifest.6b01837978ce8289065b3cd4a01cc5d6.js": "/codeTender94/precache-manifest.6b01837978ce8289065b3cd4a01cc5d6.js",
     "service-worker.js": "/codeTender94/service-worker.js",
     "static/css/main.1ea6b028.chunk.css.map": "/codeTender94/static/css/main.1ea6b028.chunk.css.map",
     "static/js/2.7c4d0912.chunk.js.LICENSE.txt": "/codeTender94/static/js/2.7c4d0912.chunk.js.LICENSE.txt",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.e6b5b792.js",
     "static/js/2.7c4d0912.chunk.js",
     "static/css/main.1ea6b028.chunk.css",
-    "static/js/main.48f50cf9.chunk.js"
+    "static/js/main.77d2a2e5.chunk.js"
   ]
 }
