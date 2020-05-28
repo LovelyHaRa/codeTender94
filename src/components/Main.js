@@ -46,6 +46,9 @@ const MainBlock = styled.header`
     @media screen and (max-width: 680px) {
       font-size: 3rem;
     }
+    @media screen and (max-width: 500px) {
+      font-size: 2rem;
+    }
   }
   .sub-title {
     margin-top: 2rem;
@@ -66,6 +69,9 @@ const MainBlock = styled.header`
     padding: 0.5rem 1rem;
     border-radius: 5px;
     background: rgba(255, 255, 255, 0.2);
+    @media screen and (max-width: 500px) {
+      font-size: 1.5rem;
+    }
   }
 `;
 

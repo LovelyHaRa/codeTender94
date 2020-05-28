@@ -198,6 +198,7 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: 'Raleway',
     fontSize: '1rem',
     margin: '1rem 0',
+    wordBreak: 'keep-all',
   },
   summary: {
     fontFamily: 'Nanum Gothic',
@@ -222,6 +223,7 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: 'Nanum Gothic',
     margin: '0.5rem',
     paddingLeft: '0.25rem',
+    wordBreak: 'keep-all',
   },
   gridListRoot: {
     display: 'flex',

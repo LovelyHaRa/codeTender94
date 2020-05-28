@@ -16,6 +16,9 @@ const FooterBlock = styled.div`
     @media screen and (max-width: 620px) {
       font-size: 0.95rem;
     }
+    @media screen and (max-width: 500px) {
+      font-size: 0.8rem;
+    }
     & > a {
       font-weight: 300;
       color: #66d9e8;
