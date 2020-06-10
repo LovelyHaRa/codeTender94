@@ -1,7 +1,5 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useSpring, animated } from 'react-spring';
 
 const ContactMeBlock = styled.div`
@@ -112,16 +110,11 @@ const ContactMe = ({ scrollTop }) => {
         <div className="contact contact-mail">
           <div className="contact-box">
             <div>
-              <a href={mail} target="_top">
-                <FontAwesomeIcon
-                  icon={faEnvelope}
-                  style={{ color: 'rgba(0,0,0,0.5)' }}
-                  size="3x"
-                />
-              </a>
+              <div />
               <a href={mail} target="_top">
                 <span className="contact-link">codetender94@gmail.com</span>
               </a>
+              <div />
             </div>
           </div>
         </div>

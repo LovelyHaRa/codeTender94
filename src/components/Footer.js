@@ -6,17 +6,17 @@ const FooterBlock = styled.div`
   background-color: rgba(0, 0, 0, 0.9);
   flex-direction: column;
   text-align: center;
-  padding: 2rem;
+  padding: 1rem;
   color: #fff;
   span {
-    margin: 0.25rem;
+    margin: 0.125rem;
     font-family: 'Jost';
     font-weight: 200;
     font-size: 1.125rem;
-    @media screen and (max-width: 620px) {
+    @media screen and (max-width: 640px) {
       font-size: 0.95rem;
     }
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 540px) {
       font-size: 0.8rem;
     }
     & > a {
@@ -39,7 +39,10 @@ const Footer = () => {
           Create React App
         </a>
       </span>
-      <span>Copyright 2020. CODETENDER94. All rights reserved.</span>
+      <div className="copyright">
+        <span>© 2020. CODETENDER94.</span>
+        <span>All contents cannot be copied without permission.</span>
+      </div>
     </FooterBlock>
   );
 };
