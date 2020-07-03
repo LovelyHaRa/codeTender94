@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "97de2b7025fb983112bf8ea4d914648b",
+    "revision": "522dc12eb9b166276b4bedc96f410921",
     "url": "/codeTender94/index.html"
   },
   {
-    "revision": "13e12b1c8b9641ee7936",
-    "url": "/codeTender94/static/css/main.1ea6b028.chunk.css"
+    "revision": "0f20aa5dd055569ecd96",
+    "url": "/codeTender94/static/css/main.4b495d63.chunk.css"
   },
   {
     "revision": "f1674915a302bae948ac",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/codeTender94/static/js/2.561288f5.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "13e12b1c8b9641ee7936",
-    "url": "/codeTender94/static/js/main.02b0dd9a.chunk.js"
+    "revision": "0f20aa5dd055569ecd96",
+    "url": "/codeTender94/static/js/main.a25b5bee.chunk.js"
   },
   {
     "revision": "864d0256d94115f88851",
@@ -72,6 +72,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/codeTender94/static/media/NotoSansKR-Thin.3c91862c.otf"
   },
   {
+    "revision": "f49f3d2d9df5013c9bfaab7e3d39ee57",
+    "url": "/codeTender94/static/media/Raleway-Bold.f49f3d2d.ttf"
+  },
+  {
     "revision": "d2a8929f630cba5875d97a5f34da6162",
     "url": "/codeTender94/static/media/Raleway-ExtraLight.d2a8929f.ttf"
   },
@@ -94,6 +98,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "9942588a6c84f959132556d99e83ded6",
     "url": "/codeTender94/static/media/Raleway-Regular.9942588a.ttf"
+  },
+  {
+    "revision": "5a25c50b181b07279489ce5bb6a9545c",
+    "url": "/codeTender94/static/media/Raleway-SemiBold.5a25c50b.ttf"
   },
   {
     "revision": "5faedfece17998f456bf5b32b100b597",
