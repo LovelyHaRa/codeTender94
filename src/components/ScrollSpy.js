@@ -37,8 +37,8 @@ const ScrollSpyBlock = styled.nav`
     width: 5px;
     height: 5px;
     right: 0;
-    border: 2px solid #ffa8a8;
-    background: #ffa8a8;
+    border: 2px solid #99e9f2;
+    background: #99e9f2;
     transform: translateY(-50%);
   }
   .menu li .context::after {

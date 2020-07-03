@@ -77,8 +77,7 @@ const SkillsBlock = styled.div`
   }
 `;
 
-const explanation =
-  'C Programing부터 시작한 근본있는 경험으로 어떤 기술이든 때려 부수겠습니다.';
+const explanation = '새로운 기술을 배우고 활용하는 것이 가장 즐겁습니다!';
 
 const ListSkills = [
   {

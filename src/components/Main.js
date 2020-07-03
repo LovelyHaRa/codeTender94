@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const MainBlock = styled.header`
+const MainBlock = styled.div`
   display: flex;
   align-items: center;
   color: #000;
@@ -15,35 +15,39 @@ const MainBlock = styled.header`
   background-size: cover;
   @media screen and (max-width: 1270px) {
     justify-content: center;
-    text-align: center;
+    /* text-align: center; */
   }
 
   .intro {
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     margin-left: 2rem;
     width: 100%;
     justify-content: space-between;
-    @media screen and (max-width: 1270px) {
-      margin: 0;
-      height: 100%;
-      flex-direction: column;
-      justify-content: space-around;
-    }
+    margin: 0;
+    flex-direction: column;
   }
 
   .intro span {
     color: #fff;
   }
+  .main-title {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2rem;
+  }
   .main-title span {
     font-size: 5rem;
-    font-family: 'Jost';
-    font-weight: 100;
-    letter-spacing: 0.25rem;
-    margin-left: 3rem;
-    letter-spacing: 0.5rem;
+    font-family: 'Raleway';
+    font-weight: 700;
+    &:first-of-type {
+      letter-spacing: 1rem;
+    }
+    &:nth-of-type(2) {
+      margin-left: 0.125rem;
+      letter-spacing: 1.25rem;
+    }
     @media screen and (max-width: 1270px) {
-      margin: 0;
       font-size: 4rem;
     }
     @media screen and (max-width: 768px) {
@@ -51,32 +55,33 @@ const MainBlock = styled.header`
     }
     @media screen and (max-width: 680px) {
       font-size: 3rem;
+      &:nth-of-type(2) {
+        margin-left: 0.125rem;
+        letter-spacing: 1.125rem;
+      }
     }
     @media screen and (max-width: 500px) {
       font-size: 2.5rem;
     }
   }
   .sub-title {
-    margin-right: 12rem;
-    justify-content: center;
-    text-align: right;
-    @media screen and (max-width: 1270px) {
-      text-align: center;
-      margin-right: 0;
+    display: flex;
+    margin-left: 2.5rem;
+    margin-top: 1rem;
+    span + span {
+      margin-left: 0.5rem;
     }
   }
   .sub-title span {
     font-size: 1.5rem;
     font-family: 'Raleway';
-    font-style: italic;
     font-weight: 200;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.2);
+    color: #f1f3f5;
+    letter-spacing: 0.125rem;
     @media screen and (max-width: 768px) {
       font-size: 1.25rem;
     }
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 600px) {
       font-size: 1rem;
     }
   }
@@ -88,10 +93,14 @@ const Main = () => {
       <MainBlock className="main">
         <div className="intro">
           <div className="main-title">
-            <span>CODE_TENDER94</span>
+            <span>CODE</span>
+            <span>TENDER</span>
           </div>
           <div className="sub-title">
-            <span>WEB DEVELOPER</span>
+            <span>Front-end</span>
+            <span>{'&'}</span>
+            <span>Back-end</span>
+            <span>WEB Developer</span>
           </div>
         </div>
       </MainBlock>

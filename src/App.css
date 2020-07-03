@@ -103,6 +103,16 @@
   font-style: italic;
   src: url('style/fonts/Raleway/Raleway-Italic.ttf') format('truetype');
 }
+@font-face {
+  font-family: 'Raleway';
+  font-weight: 600;
+  src: url('style/fonts/Raleway/Raleway-SemiBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Raleway';
+  font-weight: 700;
+  src: url('style/fonts/Raleway/Raleway-Bold.ttf') format('truetype');
+}
 
 @font-face {
   font-family: 'Nanum Gothic';
