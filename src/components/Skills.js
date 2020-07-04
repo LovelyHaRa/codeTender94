@@ -156,17 +156,17 @@ const Skills = ({ scrollTop }) => {
       scrollTop >= currentOffSet - 200 && scrollTop < nextOffSet ? true : false,
       scrollTop >= currentOffSet && scrollTop < nextOffSet ? true : false,
     ];
-    const animatedConfig = { mass: 50, tension: 1000, friction: 500 };
+    const animatedConfig = { mass: 1, tension: 170, friction: 26 };
     setTitleAnimated({
       opacity: isVisible[0] ? 1 : 0,
       x: isVisible[0] ? 0 : 20,
-      height: isVisible[0] ? 60 : 0,
+      height: 60,
       config: animatedConfig,
     });
     setSubAnimated({
       opacity: isVisible[1] ? 1 : 0,
       x: isVisible[1] ? 0 : 20,
-      height: isVisible[1] ? 60 : 0,
+      height: 60,
       config: animatedConfig,
     });
     setSkillAnimated({
