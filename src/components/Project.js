@@ -102,22 +102,21 @@ const ProjectBlock = styled.div`
 
 const ListProject = [
   {
-    name: 'CODE WIKI',
-    summary:
-      '물품의 바코드를 스캔하면 해당 물품에 대한 정보를 위키백과 형식으로 공유하는 웹 서비스',
-    skills: 'Java(Android) / JSP / JQUERY / MySQL',
-    link: 'https://github.com/LovelyHaRa/2019_Capstone_Design_Project',
+    name: 'React Single Page Application - MAKE UP HARA',
+    summary: '블로그, 위키서비스를 제공하는 React 기반 SPA',
+    skills: 'React / Redux / Node.js / Koa.js / MongoDB',
+    link: 'https://github.com/LovelyHaRa/Make-Up-HaRa',
     feature: [
-      'Bar/QR코드 스캔(Android APP)',
-      '코드값을 기반으로 위키 문서 조회/관리',
-      '사용자 인증',
-      '게시판',
+      '다크모드 지원',
+      '로컬 / 소셜(Google, Naver, Kakao) 로그인',
+      '블로그: 포스트 조회 / 작성 / 수정 / 삭제',
+      '블로그: 작성자 / 태그별 조회 기능',
+      '블로그: 댓글 작성 / 삭제',
+      '위키: 문서 작성 / 수정',
+      '위키: 문서 검색 / 검색결과 정렬',
+      '마이페이지: 유저 정보 수정, 활동 기록 조회',
     ],
-    img: [
-      process.env.PUBLIC_URL + '/images/project/codewiki/01.jpg',
-      process.env.PUBLIC_URL + '/images/project/codewiki/02.jpg',
-      process.env.PUBLIC_URL + '/images/project/codewiki/03.jpg',
-    ],
+    applink: 'https://makeuphara.herokuapp.com/',
   },
   {
     name: 'Spirng Framework - CODE WIKI',
@@ -137,20 +136,22 @@ const ListProject = [
     ],
   },
   {
-    name: 'React Single Page Application - MAKE UP HARA',
-    summary: '블로그, 위키서비스를 제공하는 React 기반 SPA',
-    skills: 'React / Redux / Node.js / Koa.js / MongoDB',
-    link: 'https://github.com/LovelyHaRa/Make-Up-HaRa',
+    name: 'Capstone Design - CODE WIKI',
+    summary:
+      '물품의 바코드를 스캔하면 해당 물품에 대한 정보를 위키백과 형식으로 공유하는 웹 서비스',
+    skills: 'Java(Android) / JSP / JQUERY / MySQL',
+    link: 'https://github.com/LovelyHaRa/2019_Capstone_Design_Project',
     feature: [
-      '다크모드 지원',
-      '로컬 / 소셜(Google, Naver, Kakao) 로그인',
-      '블로그: 포스트 조회 / 작성 / 수정 / 삭제',
-      '블로그: 작성자 / 태그별 조회 기능',
-      '위키: 문서 작성 / 수정',
-      '위키: 문서 검색 / 검색결과 정렬',
-      '마이페이지: 유저 정보 수정, 활동 기록 조회',
+      'Bar/QR코드 스캔(Android APP)',
+      '코드값을 기반으로 위키 문서 조회/관리',
+      '사용자 인증',
+      '게시판',
     ],
-    applink: 'https://makeuphara.herokuapp.com/',
+    img: [
+      process.env.PUBLIC_URL + '/images/project/codewiki/01.jpg',
+      process.env.PUBLIC_URL + '/images/project/codewiki/02.jpg',
+      process.env.PUBLIC_URL + '/images/project/codewiki/03.jpg',
+    ],
   },
 ];
 
