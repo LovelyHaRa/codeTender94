@@ -77,7 +77,8 @@ const SkillsBlock = styled.div`
   }
 `;
 
-const explanation = '새로운 기술을 배우고 활용하는 것이 가장 즐겁습니다!';
+const explanation =
+  '새로운 기술 습득에 대한 즐거움, 그리고 적응력을 기반으로 빠르게!';
 
 const ListSkills = [
   {

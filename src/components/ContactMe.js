@@ -111,7 +111,7 @@ const ContactMe = ({ scrollTop }) => {
           <div className="contact-box">
             <div>
               <div />
-              <a href={mail} target="_top">
+              <a href={mail} target="_blank" rel="noopener noreferrer">
                 <span className="contact-link">codetender94@gmail.com</span>
               </a>
               <div />
@@ -122,7 +122,7 @@ const ContactMe = ({ scrollTop }) => {
           <div className="contact-box">
             <div>
               <div />
-              <a href={blog} target="_top">
+              <a href={blog} target="_blank" rel="noopener noreferrer">
                 <span className="contact-link">TISTORY BLOG</span>
               </a>
               <div />
