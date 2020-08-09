@@ -7,8 +7,7 @@ import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import { makeStyles } from '@material-ui/core';
-import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
+import CarouselSlide from './common/CarouselSlide';
 
 const ProjectBlock = styled.div`
   display: flex;
@@ -188,7 +187,8 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     backgroundColor: theme.palette.background.paper,
-    border: '2px solid #000',
+    outline: 'none',
+    borderRadius: '5px',
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
     '@media (max-width: 780px)': {
@@ -279,17 +279,7 @@ const ProjectModal = ({ project, open, onClose }) => {
               바로가기
             </a>
           )}
-          {img && (
-            <div className={classes.gridListRoot}>
-              <GridList className={classes.gridList} cellHeight={320} cols={3}>
-                {img.map((element, index) => (
-                  <GridListTile key={index} cols={1}>
-                    <img src={element} alt={name} />
-                  </GridListTile>
-                ))}
-              </GridList>
-            </div>
-          )}
+          {img && <CarouselSlide content={img} />}
         </div>
       </Fade>
     </Modal>

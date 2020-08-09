@@ -6,7 +6,7 @@ import Skills from './components/Skills';
 import Project from './components/Project';
 import ContactMe from './components/ContactMe';
 import Footer from './components/Footer';
-import ScrollSpy from './components/ScrollSpy';
+import ScrollSpy from './components/common/ScrollSpy';
 
 const App = () => {
   const [scrollTop, setScrollTop] = useState(0);
