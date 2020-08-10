@@ -132,6 +132,9 @@ const ListProject = [
       process.env.PUBLIC_URL + '/images/project/spring-codewiki/01.jpg',
       process.env.PUBLIC_URL + '/images/project/spring-codewiki/02.jpg',
       process.env.PUBLIC_URL + '/images/project/spring-codewiki/03.jpg',
+      process.env.PUBLIC_URL + '/images/project/spring-codewiki/04.jpg',
+      process.env.PUBLIC_URL + '/images/project/spring-codewiki/05.jpg',
+      process.env.PUBLIC_URL + '/images/project/spring-codewiki/06.jpg',
     ],
   },
   {
@@ -193,6 +196,26 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2, 4, 3),
     '@media (max-width: 780px)': {
       width: '70%',
+    },
+    '@media (min-width: 781px)': {
+      width: '740px',
+    },
+    height: '90%',
+    overflow: 'auto',
+    '&::-webkit-scrollbar': {
+      width: '0.5rem',
+      backgroundColor: '#f1f3f5',
+    },
+    '&::-webkit-scrollbar-thumb': {
+      borderRadius: '0.5rem',
+      backgroundColor: '#adb5bd',
+    },
+    '&::-webkit-scrollbar-track': {
+      backgroundColor: 'transparent',
+    },
+    '&::-webkit-scrollbar-button': {
+      width: 0,
+      height: 0,
     },
   },
   title: {
