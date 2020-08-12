@@ -7,7 +7,6 @@ const ScrollSpyBlock = styled.nav`
   top: 50%;
   right: 1rem;
   transform: translateY(-50%);
-
   .menu {
     margin: 0;
     padding: 0;
@@ -63,11 +62,12 @@ const ScrollSpyBlock = styled.nav`
     opacity: 0;
     letter-spacing: 0.5px;
     background-color: #f03e3e;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.75rem;
     border-radius: 3px;
     margin-right: 30px;
     transform: translateX(20px);
     transition: all 0.3s ease;
+    font-size: 0.75rem;
   }
   .menu li .context span::before {
     display: block;
@@ -99,27 +99,27 @@ const ScrollSpy = () => {
       <ul className="menu">
         <li>
           <button onClick={() => onClick('.main')} className="context">
-            <span>MAIN</span>
+            <span className="context-name">MAIN</span>
           </button>
         </li>
         <li>
           <button onClick={() => onClick('.aboutme')} className="context">
-            <span>ABOUT ME</span>
+            <span className="context-name">ABOUT ME</span>
           </button>
         </li>
         <li>
           <button onClick={() => onClick('.skills')} className="context">
-            <span>SKILLS</span>
+            <span className="context-name">SKILLS</span>
           </button>
         </li>
         <li>
           <button onClick={() => onClick('.project')} className="context">
-            <span>PROJECT</span>
+            <span className="context-name">PROJECT</span>
           </button>
         </li>
         <li>
           <button onClick={() => onClick('.contactme')} className="context">
-            <span>CONTACT ME</span>
+            <span className="context-name">CONTACT ME</span>
           </button>
         </li>
       </ul>
