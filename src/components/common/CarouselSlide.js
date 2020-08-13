@@ -11,6 +11,11 @@ const CarouselSlideBlock = styled.div`
   .carousel-arrow {
     cursor: pointer;
   }
+  @media screen and (max-width: 500px) {
+    img {
+      width: 100%;
+    }
+  }
 `;
 
 const useStyles = makeStyles(() => ({

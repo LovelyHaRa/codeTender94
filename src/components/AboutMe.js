@@ -6,7 +6,6 @@ const AboutMeBlock = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  min-height: 100vh;
   align-items: flex-start;
 
   .container {
@@ -81,6 +80,9 @@ const AboutMeBlock = styled.div`
     }
     @media screen and (max-width: 550px) {
       font-size: 1rem;
+    }
+    @media screen and (max-width: 480px) {
+      font-size: 0.9rem;
     }
   }
 `;

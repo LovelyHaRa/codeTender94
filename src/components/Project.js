@@ -12,7 +12,6 @@ import CarouselSlide from './common/CarouselSlide';
 const ProjectBlock = styled.div`
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
   .title-block {
     margin: 4rem;
     margin-bottom: 0;
@@ -204,6 +203,7 @@ const useStyles = makeStyles((theme) => ({
     overflow: 'auto',
     '&::-webkit-scrollbar': {
       width: '0.5rem',
+      height: '0.5rem',
       backgroundColor: '#f1f3f5',
     },
     '&::-webkit-scrollbar-thumb': {

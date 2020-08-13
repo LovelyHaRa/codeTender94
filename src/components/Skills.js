@@ -12,7 +12,6 @@ const SkillsBlock = styled.div`
   background-attachment: scroll;
   background-position: center center;
   background-size: cover;
-  min-height: 100vh;
   .title-block {
     margin: 4rem;
     margin-bottom: 0;

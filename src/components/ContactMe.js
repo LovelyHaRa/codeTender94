@@ -6,7 +6,6 @@ const ContactMeBlock = styled.div`
   background-color: #f3f0ff;
   display: flex;
   flex-direction: column;
-  min-height: 91vh;
   .title-content {
     margin: 4rem;
     margin-bottom: 0;
