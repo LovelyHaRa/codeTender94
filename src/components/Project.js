@@ -114,7 +114,7 @@ const ListProject = [
       '위키: 문서 검색 / 검색결과 정렬',
       '마이페이지: 유저 정보 수정, 활동 기록 조회',
     ],
-    applink: 'https://makeuphara.herokuapp.com/',
+    applink: 'https://makeuphara.azurewebsites.net/',
   },
   {
     name: 'Spirng Framework - CODE WIKI',
