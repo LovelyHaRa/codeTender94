@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const MainBlock = styled.div`
   display: flex;
@@ -85,6 +86,25 @@ const MainBlock = styled.div`
       font-size: 1rem;
     }
   }
+  .more-button {
+    appearance: none;
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    color: #fff;
+  }
+  .more-button:hover {
+    color: #ced4da;
+  }
+  .more-button:focus {
+    outline: none;
+  }
+  .more-button > svg {
+    font-size: 5rem;
+  }
 `;
 
 const Main = () => {
@@ -102,6 +122,15 @@ const Main = () => {
             <span>Back-end</span>
             <span>WEB Developer</span>
           </div>
+          <button
+            className="more-button"
+            onClick={() => {
+              const move = document.querySelector('.aboutme').offsetTop;
+              window.scrollTo({ top: move, behavior: 'smooth' });
+            }}
+          >
+            <ExpandMoreIcon />
+          </button>
         </div>
       </MainBlock>
     </>
