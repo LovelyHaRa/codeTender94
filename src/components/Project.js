@@ -117,6 +117,25 @@ const ListProject = [
     applink: 'https://makeuphara.azurewebsites.net/',
   },
   {
+    name: 'React Native App - MAKE UP HARA',
+    summary: '바코드 스캔 검색을 지원하는 MAKE UP HARA App Service',
+    skills: 'React Native / Expo / React Navigation / Redux',
+    link: 'https://github.com/LovelyHaRa/MakeUpHaRa-react-native',
+    feature: [
+      '다크모드 지원',
+      '바코드 스캔으로 위키 문서 조회',
+      '블로그: 포스트 조회, 검색',
+      '위키: 문서 검색',
+      '마이페이지: 비밀번호 변경, 바코드 문서 연동',
+    ],
+    img: [
+      process.env.PUBLIC_URL + '/images/project/makeuphara-react-native/01.png',
+      process.env.PUBLIC_URL + '/images/project/makeuphara-react-native/02.png',
+      process.env.PUBLIC_URL + '/images/project/makeuphara-react-native/03.png',
+      process.env.PUBLIC_URL + '/images/project/makeuphara-react-native/04.png',
+    ],
+  },
+  {
     name: 'Spirng Framework - CODE WIKI',
     summary: 'CODE WIKI 프로젝트를 Spring Framework를 이용하여 Re-Engineering',
     skills: 'Spring Boot / Spring Security / JPA / MySQL',

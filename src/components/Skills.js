@@ -87,14 +87,19 @@ const ListSkills = [
   },
   { name: 'REACT', content: 'CRUD 기능이 포함된 SPA 제작 경험', completed: 70 },
   {
+    name: 'REACT NATIVE',
+    content: 'REST API 서버를 이용한 어플리케이션 제작 경험',
+    completed: 60,
+  },
+  {
     name: 'SPRING FRAMEWORK',
     content: 'CRUD 기능이 포함된 MVC 프로젝트 제작 경험',
     completed: 70,
   },
   {
     name: 'NODE.JS',
-    content: 'Express/Koa를 기반으로 한 웹 서버 구축 경험, API 설계',
-    completed: 50,
+    content: 'Express/Koa를 기반으로 한 웹 서버 구축 및 REST API 구현 경험',
+    completed: 60,
   },
   {
     name: 'JAVA',
@@ -104,7 +109,7 @@ const ListSkills = [
   {
     name: 'C++',
     content: '알고리즘 문제 해결을 위한 언어로 사용 중',
-    completed: 80,
+    completed: 70,
   },
   {
     name: 'C#',
