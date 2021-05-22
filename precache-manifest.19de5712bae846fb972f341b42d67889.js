@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "512711d10672c9d19a3e4dd75a198c05",
+    "revision": "c67ec5012da95ec256e72426df29e945",
     "url": "/codeTender94/index.html"
   },
   {
-    "revision": "07e793b3e89089e873da",
-    "url": "/codeTender94/static/css/main.4b495d63.chunk.css"
+    "revision": "77e42cf59ecfaadfb5d4",
+    "url": "/codeTender94/static/css/main.96b19cc3.chunk.css"
   },
   {
-    "revision": "afd2a6baae57df8e2570",
-    "url": "/codeTender94/static/js/2.4660643e.chunk.js"
+    "revision": "d8ea7c31bd5ada596dd9",
+    "url": "/codeTender94/static/js/2.e0a76023.chunk.js"
   },
   {
-    "revision": "0749163b59fbee32225059cb60c18af6",
-    "url": "/codeTender94/static/js/2.4660643e.chunk.js.LICENSE.txt"
+    "revision": "1edf6fec8b31b48da7686fe422ea0457",
+    "url": "/codeTender94/static/js/2.e0a76023.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "07e793b3e89089e873da",
-    "url": "/codeTender94/static/js/main.ccf19e5b.chunk.js"
+    "revision": "77e42cf59ecfaadfb5d4",
+    "url": "/codeTender94/static/js/main.287eaac4.chunk.js"
   },
   {
     "revision": "93ee6cbaae17f3cb1730",
